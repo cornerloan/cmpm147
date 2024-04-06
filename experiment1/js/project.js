@@ -35,15 +35,15 @@ function main() {
   missions: ["defend a friendly outpost", "protect liberty", "defend freedom", "search and destroy enemy outposts", "launch an ICBM", "conduct geological surveys", "upload escape pod data", "retrieve valuable data", "activate E-710 pumps", "evacuate civilians"]
 };
 
-const template = "Greetings $rank! We need your assistance on this mission." + "\n" + 
-"$planets is currently being attacked by a small army of $enemies." + "\n\n" +
-"Fortunately, we have some equipment for you to take. Your equipment will consist of:" + "\n" +
-"1x $guns" + "\n" +
-"2x $grenades" + "\n" +
-"2x $powers1" + "\n" +
-"3x Orbital $powers2" + "\n" +
-"1x Eagle $powers3" + "\n\n" +
-"You will need to be smart with this equipment in order to $missions." + "\n" +
+const template = "Greetings $rank! We need your assistance on this mission." + "<br>" + 
+"$planets is currently being attacked by a small army of $enemies." + "<br><br>" +
+"Fortunately, we have some equipment for you to take. Your equipment will consist of:" + "<br>" +
+"1x $guns" + "<br>" +
+"2x $grenades" + "<br>" +
+"2x $powers1" + "<br>" +
+"3x Orbital $powers2" + "<br>" +
+"1x Eagle $powers3" + "<br><br>" +
+"You will need to be smart with this equipment in order to $missions." + "<br>" +
 "Good luck Helldiver!";
 
 
