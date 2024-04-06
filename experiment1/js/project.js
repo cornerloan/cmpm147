@@ -40,11 +40,11 @@ $planets is currently being attacked by a small army of $enemies.</br>
 Fortunately, we have some equipment for you to take. Your equipment will consist of:<br>
 1x $guns<\br>
 2x $grenades<\n>
-2x $powers1\n
-3x Orbital $powers2\n
-1x Eagle $powers3\n
-You will need to be smart with this equipment in order to $missions.\n
-Good luck Helldiver!\n
+2x $powers1
+3x Orbital $powers2
+1x Eagle $powers3
+You will need to be smart with this equipment in order to $missions.
+Good luck Helldiver!
  `;
 
 
