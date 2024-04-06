@@ -26,7 +26,7 @@ function main() {
   const fillers = {
   rank: ["Cadet", "Space Cadet", "Sergeant", "Master Sergeant", "Chief", "Space Chief Prime", "Death Captain", "Marshall", "Star Marshall", "Admiral", "Skull Admiral", "Fleet Admiral", "Admirable Admiral", "Commander", "Galactic Commander", "Hell Commander", "General", "5-Star General", "10-Star General", "Private", "Super Private"],
   planets: ["Alaraph", "Keid", "Kirrik", "Fornskogur II", "Prosperity Falls", "Viridia Prime", "Krakatwo", "Crimsica", "Pherkad Secundus", "Haldus", "Mintoria", "Diluvia", "AIN-5", "Alamak VII", "Aesir Pass", "Emeria", "Epsilon Phoencis VI", "Lesath", "Fenmire", "Liberty Ridge", "Oshaune", "Hyrdobius", "Stor Tha Prime", "Oslo Station", "Super Earth"],
-  enemies: ["Terminid\n", "Automaton\n", "Illuminate\n"],
+  enemies: ["Terminid\r\n", "Automaton\r\n", "Illuminate\r\n"],
   guns: ["AR-23 Liberator", "ARC-3 Arc Thrower", "APW-1 Anti-Materiel Rifle", "FAF-14 Spear", "FLAM-40 Incinerator", "JAR-5 Dominator", "LAS-16 Sickle", "LAS-98 Laser Cannon", "LAS-5 Scythe", "M-105 Stalwart", "MG-43 Machine Gun", "MG-206 Heavy Machine Gun", "P-19 Redeemer", "P-2 Peacemaker", "P-4 Senator", "R-63 Diligence", "RS-422 Railgun", "SG-225 Breaker", "SG-8 Punisher", "SG-8S Slugger"],
   grenades: ["G-10 Incendiary", "G-3 Smoke", "G-16 Impact", "G-6 Frag", "G-12 High Explosive", "G-23 Stun"],
   powers1: ["Tesla Tower", "Anti-Personnel Minefield", "Incendiary Mines", "Machine Gun Sentry", "Gatling Sentry", "Mortar Sentry", "Autocannon Sentry", "Rocket Sentry", "EMS Mortar Sentry"],
