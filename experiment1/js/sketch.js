@@ -1,6 +1,6 @@
 // sketch.js - This file is for a text generator to give the reader a random mission and equipment for the game Helldivers.
 // Author: Connor Lowe
-// Date: 4/7/2024
+// Date: 4/7/2024 
 
 const fillers = {
   rank: ["Cadet", "Space Cadet", "Sergeant", "Master Sergeant", "Chief", "Space Chief Prime", "Death Captain", "Marshall", "Star Marshall", "Admiral", "Skull Admiral", "Fleet Admiral", "Admirable Admiral", "Commander", "Galactic Commander", "Hell Commander", "General", "5-Star General", "10-Star General", "Private", "Super Private"],
