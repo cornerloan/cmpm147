@@ -35,16 +35,16 @@ function main() {
   missions: ["defend a friendly outpost", "protect liberty", "defend freedom", "search and destroy enemy outposts", "launch an ICBM", "conduct geological surveys", "upload escape pod data", "retrieve valuable data", "activate E-710 pumps", "evacuate civilians"]
 };
 
-const template = `Greetings $rank! We need your assistance on this mission.` + "\n" + 
-`$planets is currently being attacked by a small army of $enemies.` + "\n\n" +
-`Fortunately, we have some equipment for you to take. Your equipment will consist of:` + "\n" +
-`1x $guns` + "\n" +
-`2x $grenades` + "\n" +
-`2x $powers1` + "\n" +
-`3x Orbital $powers2` + "\n" +
-`1x Eagle $powers3` + "\n\n" +
-`You will need to be smart with this equipment in order to $missions.` + "\n" +
-`Good luck Helldiver!`;
+const template = "Greetings $rank! We need your assistance on this mission." + "\n" + 
+"$planets is currently being attacked by a small army of $enemies." + "\n\n" +
+"Fortunately, we have some equipment for you to take. Your equipment will consist of:" + "\n" +
+"1x $guns" + "\n" +
+"2x $grenades" + "\n" +
+"2x $powers1" + "\n" +
+"3x Orbital $powers2" + "\n" +
+"1x Eagle $powers3" + "\n\n" +
+"You will need to be smart with this equipment in order to $missions." + "\n" +
+"Good luck Helldiver!";
 
 
 // STUDENTS: You don't need to edit code below this line.
@@ -56,7 +56,7 @@ function replacer(match, name) {
   if (options) {
     return options[Math.floor(Math.random() * options.length)];
   } else {
-    return `<UNKNOWN:${name}>`;
+    return "<UNKNOWN:${name}>";
   }
 }
 
