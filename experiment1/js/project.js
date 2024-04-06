@@ -83,4 +83,4 @@ generate();
 }
 
 // let's get this party started - uncomment me
-//main();
+main();
