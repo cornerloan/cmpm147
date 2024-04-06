@@ -39,7 +39,7 @@ const template = "Greetings $rank! We need your assistance on this mission.<BR>
 $planets is currently being attacked by a small army of $enemies.</br>
 Fortunately, we have some equipment for you to take. Your equipment will consist of:<br>
 1x $guns<\br>
-2x $grenades<\n>
+2x $grenades grenades<\n>
 2x $powers1
 3x Orbital $powers2
 1x Eagle $powers3
