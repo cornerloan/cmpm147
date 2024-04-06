@@ -1,7 +1,29 @@
 // project.js - Generates a random mission and set of equipment for the reader to use in the video game Helldivers.
 // Author: Connor Lowe
 // Date: 4/7/2024
-const fillers = {
+
+// NOTE: This is how we might start a basic JavaaScript OOP project
+
+// Constants - User-servicable parts
+// In a longer project I like to put these in a separate file
+
+// define a class
+class MyProjectClass {
+  // constructor function
+  constructor(param1, param2) {
+    // set properties using 'this' keyword
+    this.property1 = param1;
+    this.property2 = param2;
+  }
+  
+  // define a method
+  myMethod() {
+    // code to run when method is called
+  }
+}
+
+function main() {
+  const fillers = {
   rank: ["Cadet", "Space Cadet", "Sergeant", "Master Sergeant", "Chief", "Space Chief Prime", "Death Captain", "Marshall", "Star Marshall", "Admiral", "Skull Admiral", "Fleet Admiral", "Admirable Admiral", "Commander", "Galactic Commander", "Hell Commander", "General", "5-Star General", "10-Star General", "Private", "Super Private"],
   planets: ["Alaraph", "Keid", "Kirrik", "Fornskogur II", "Prosperity Falls", "Viridia Prime", "Krakatwo", "Crimsica", "Pherkad Secundus", "Haldus", "Mintoria", "Diluvia", "AIN-5", "Alamak VII", "Aesir Pass", "Emeria", "Epsilon Phoencis VI", "Lesath", "Fenmire", "Liberty Ridge", "Oshaune", "Hyrdobius", "Stor Tha Prime", "Oslo Station", "Super Earth"],
   enemies: ["Terminid", "Automaton", "Illuminate"],
@@ -50,10 +72,15 @@ function generate() {
   }
 
   /* global box */
-  box.innerText = story;
+  $("#box").text(story);
 }
 
 /* global clicker */
-clicker.onclick = generate;
+$("#clicker").click(generate);
 
 generate();
+
+}
+
+// let's get this party started - uncomment me
+//main();
