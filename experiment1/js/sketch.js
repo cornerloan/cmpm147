@@ -1,60 +1,79 @@
-// sketch.js - This file is for a text generator to give the reader a random mission and equipment for the game Helldivers.
-// Author: Connor Lowe
-// Date: 4/7/2024 
+// sketch.js - purpose and description here
+// Author: Your Name
+// Date:
 
-const fillers = {
-  rank: ["Cadet", "Space Cadet", "Sergeant", "Master Sergeant", "Chief", "Space Chief Prime", "Death Captain", "Marshall", "Star Marshall", "Admiral", "Skull Admiral", "Fleet Admiral", "Admirable Admiral", "Commander", "Galactic Commander", "Hell Commander", "General", "5-Star General", "10-Star General", "Private", "Super Private"],
-  planets: ["Alaraph", "Keid", "Kirrik", "Fornskogur II", "Prosperity Falls", "Viridia Prime", "Krakatwo", "Crimsica", "Pherkad Secundus", "Haldus", "Mintoria", "Diluvia", "AIN-5", "Alamak VII", "Aesir Pass", "Emeria", "Epsilon Phoencis VI", "Lesath", "Fenmire", "Liberty Ridge", "Oshaune", "Hyrdobius", "Stor Tha Prime", "Oslo Station", "Super Earth"],
-  enemies: ["Terminid", "Automaton", "Illuminate"],
-  guns: ["AR-23 Liberator", "ARC-3 Arc Thrower", "APW-1 Anti-Materiel Rifle", "FAF-14 Spear", "FLAM-40 Incinerator", "JAR-5 Dominator", "LAS-16 Sickle", "LAS-98 Laser Cannon", "LAS-5 Scythe", "M-105 Stalwart", "MG-43 Machine Gun", "MG-206 Heavy Machine Gun", "P-19 Redeemer", "P-2 Peacemaker", "P-4 Senator", "R-63 Diligence", "RS-422 Railgun", "SG-225 Breaker", "SG-8 Punisher", "SG-8S Slugger"],
-  grenades: ["G-10 Incendiary", "G-3 Smoke", "G-16 Impact", "G-6 Frag", "G-12 High Explosive", "G-23 Stun"],
-  powers1: ["Tesla Tower", "Anti-Personnel Minefield", "Incendiary Mines", "Machine Gun Sentry", "Gatling Sentry", "Mortar Sentry", "Autocannon Sentry", "Rocket Sentry", "EMS Mortar Sentry"],
-  powers2: ["Gatling Barrage", "Airburst Strike", "120MM HE Barrage", "Walking Barrage", "Laser", "Railcannon Strike", "Gas Strike", "EMS Strike", "Smoke Strike"],
-  powers3: ["Strafing Run", "Airstrike", "Cluster Bomb", "Napalm Airstrike", "Smoke Strike", "110MM Rocket Pods", "500kg Bomb"],
-  missions: ["defend a friendly outpost", "protect liberty", "defend freedom", "search and destroy enemy outposts", "launch an ICBM", "conduct geological surveys", "upload escape pod data", "retrieve valuable data", "activate E-710 pumps", "evacuate civilians"]
-};
+// Here is how you might set up an OOP p5.js project
+// Note that p5.js looks for a file called sketch.js
 
-const template = `Greetings $rank! We need your assistance on this mission.
+// Constants - User-servicable parts
+// In a longer project I like to put these in a separate file
+const VALUE1 = 1;
+const VALUE2 = 2;
 
-$planets is currently being attacked by a small army of $enemies.
+// Globals
+let myInstance;
+let canvasContainer;
+var centerHorz, centerVert;
 
-Fortunately, we have some equipment for you to take. Your equipment will consist of:
-1x $guns
-2x $grenades
-2x $powers1
-3x Orbital $powers2
-1x Eagle $powers3
+class MyClass {
+    constructor(param1, param2) {
+        this.property1 = param1;
+        this.property2 = param2;
+    }
 
-You will need to be smart with this equipment in order to $missions.
-
-Good luck Helldiver!
-`;
-
-
-// STUDENTS: You don't need to edit code below this line.
-
-const slotPattern = /\$(\w+)/;
-
-function replacer(match, name) {
-  let options = fillers[name];
-  if (options) {
-    return options[Math.floor(Math.random() * options.length)];
-  } else {
-    return `<UNKNOWN:${name}>`;
-  }
+    myMethod() {
+        // code to run when method is called
+    }
 }
 
-function generate() {
-  let story = template;
-  while (story.match(slotPattern)) {
-    story = story.replace(slotPattern, replacer);
-  }
-
-  /* global box */
-  box.innerText = story;
+function resizeScreen() {
+  centerHorz = canvasContainer.width() / 2; // Adjusted for drawing logic
+  centerVert = canvasContainer.height() / 2; // Adjusted for drawing logic
+  console.log("Resizing...");
+  resizeCanvas(canvasContainer.width(), canvasContainer.height());
+  // redrawCanvas(); // Redraw everything based on new size
 }
 
-/* global clicker */
-clicker.onclick = generate;
+// setup() function is called once when the program starts
+function setup() {
+  // place our canvas, making it fit our container
+  canvasContainer = $("#canvas-container");
+  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+  canvas.parent("canvas-container");
+  // resize canvas is the page is resized
 
-generate();
+  // create an instance of the class
+  myInstance = new MyClass("VALUE1", "VALUE2");
+
+  $(window).resize(function() {
+    resizeScreen();
+  });
+  resizeScreen();
+}
+
+// draw() function is called repeatedly, it's the main animation loop
+function draw() {
+  background(220);    
+  // call a method on the instance
+  myInstance.myMethod();
+
+  // Set up rotation for the rectangle
+  push(); // Save the current drawing context
+  translate(centerHorz, centerVert); // Move the origin to the rectangle's center
+  rotate(frameCount / 100.0); // Rotate by frameCount to animate the rotation
+  fill(234, 31, 81);
+  noStroke();
+  rect(-125, -125, 250, 250); // Draw the rectangle centered on the new origin
+  pop(); // Restore the original drawing context
+
+  // The text is not affected by the translate and rotate
+  fill(255);
+  textStyle(BOLD);
+  textSize(140);
+  text("p5*", centerHorz - 105, centerVert + 40);
+}
+
+// mousePressed() function is called once after every time a mouse button is pressed
+function mousePressed() {
+    // code to run when mouse is pressed
+}
