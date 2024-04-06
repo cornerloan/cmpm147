@@ -35,20 +35,20 @@ function main() {
   missions: ["defend a friendly outpost", "protect liberty", "defend freedom", "search and destroy enemy outposts", "launch an ICBM", "conduct geological surveys", "upload escape pod data", "retrieve valuable data", "activate E-710 pumps", "evacuate civilians"]
 };
 
-const template = "Greetings $rank! We need your assistance on this mission.\n
-\n
-$planets is currently being attacked by a small army of $enemies.\n
-\n
-Fortunately, we have some equipment for you to take. Your equipment will consist of:\n
-1x $guns\n
-2x $grenades\n
-2x $powers1\n
-3x Orbital $powers2\n
-1x Eagle $powers3\n
-\n
-You will need to be smart with this equipment in order to $missions.\n
-\n
-Good luck Helldiver!\n
+const template = "Greetings $rank! We need your assistance on this mission.\r\n
+\r\n
+$planets is currently being attacked by a small army of $enemies.\r\n
+\r\n
+Fortunately, we have some equipment for you to take. Your equipment will consist of:\r\n
+1x $guns\r\n
+2x $grenades\r\n
+2x $powers1\r\n
+3x Orbital $powers2\r\n
+1x Eagle $powers3\r\n
+\r\n
+You will need to be smart with this equipment in order to $missions.\r\n
+\r\n
+Good luck Helldiver!\r\n
 ";
 
 
