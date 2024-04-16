@@ -60,18 +60,18 @@ function draw() {
   rect(0, 0, width, height / 2);
   
   //fill(skyColorBlue);
-  let rand1 = random(width/4);
-  let rand2 = random(height/4);
-  for(let a = 0; a < 10; a++){
-    ellipse(0, 0, rand1 / (10 - a), rand2 / (10 - a));
-    fill(105, 173, 228, 150 - a);
+  let rand1 = random(width+1);
+  let rand2 = random(height+1);
+  for(let a = 0; a < 30; a++){
+    ellipse(0, 0, rand1 / (30 - a), rand2 / (30 - a));
+    fill(105, 173, 228, 150 - (4*a));
   }
   
-  let rand3 = random(300);
-  let rand4 = random(150);
-  for(let b = 0; b < 10; b++){
-    ellipse(width, 0, rand3 / (10 - b), rand4 / (10 - b));
-    fill(105, 173, 228, 150 - b);
+  let rand3 = random(width+1);
+  let rand4 = random(height+1);
+  for(let b = 0; b < 30; b++){
+    ellipse(width, 0, rand3 / (30 - b), rand4 / (30 - b));
+    fill(105, 173, 228, 150 - (4*b));
   }
     
   //ellipse(0, 0, random(400), random(200));
