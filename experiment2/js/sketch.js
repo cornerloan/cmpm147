@@ -119,7 +119,7 @@ function draw() {
   fill(treeColor);
   const trees = 50;
   for(let i = 0; i < trees; i++){
-    let z = random(0.05, 0.9);
+    let z = random(0.05, 1);
     //var x = width * random(0.71, 1);
     //if(random(1, 30) > 15) {
     //  x = width * random(0, 0.33);
