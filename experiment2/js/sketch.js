@@ -78,7 +78,7 @@ function draw() {
   //ellipse(width, 0, random(100), random(100));
   
   fill(sunColor);
-  ellipse(mouseX, -100*sin(mouseX/(width/3)) + 100, 50, 50);
+  ellipse(mouseX, -100*sin(mouseX/(width/3)), 50, 50);
   
   fill(cloudColor);
   let yOffset = random(30);
