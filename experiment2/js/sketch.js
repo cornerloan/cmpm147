@@ -128,7 +128,7 @@ function draw() {
     if(rand > 0.7 || rand < 0.3){
       let x = width * rand;
       let s = width / 50 / z;
-      let y = height / 2 + height / 20 / z;
+      let y = height / 2 + height / (height/20) / z;
       triangle(x, y - s, x - s / 4, y, x + s / 4, y);
     }
   }
