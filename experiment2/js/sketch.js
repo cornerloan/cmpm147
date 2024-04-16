@@ -117,16 +117,20 @@ function draw() {
   
   stroke(borderColor);
   fill(treeColor);
-  const trees = random(150);
+  const trees = 50;
   for(let i = 0; i < trees; i++){
     let z = random();
-    var x = width * random(0.71, 1);
-    if(random(1, 30) > 15) {
-      x = width * random(0, 0.33);
+    //var x = width * random(0.71, 1);
+    //if(random(1, 30) > 15) {
+    //  x = width * random(0, 0.33);
+    //}
+    let rand = random();
+    if(rand > 0.7 || rand < 0.3){
+      let x = width * rand;
+      let s = width / 50 / z;
+      let y = height / 2 + height / 20 / z;
+      triangle(x, y - s, x - s / 4, y, x + s / 4, y);
     }
-    let s = width / 50 / z;
-    let y = height / 2 + height / 20 / z;
-    triangle(x, y - s, x - s / 4, y, x + s / 4, y);
   }
 }
 
