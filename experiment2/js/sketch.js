@@ -109,8 +109,8 @@ function draw() {
   //min x = 33%    max x = 0.71
   let leftSide = width - width * random(0.5, 0.66);
   let rightSide = width * random(0.07, 0.21);
-  for(let a = 0; a < 60; a++){
-    rect(leftSide, (height / 2) + a*5 , rightSide, height / 10, 20);
+  for(let a = height/2; a < height; a++){
+    rect(leftSide, a , rightSide, height / 10, 20);
     let sway = random([-1, 1]);
     leftSide = leftSide + random(1, 15) * sway;
   }
