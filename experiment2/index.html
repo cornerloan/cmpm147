@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 2 - Living Impressions</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -32,7 +32,7 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 2 - Living Impressions</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
@@ -44,18 +44,37 @@
 			</div>
 
 			<div class="minor-section">
+		<div class="image-wrapper">
+			<img src="img/landscape.jpg">
+		</div>
+			</div>
+
+			<div class="minor-section">
+			<div>
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>This experiment creates generated art based off of the image.</p>
+				<p>The image has a few key features: trees, a mountain, a pink and blue sky, and a river.</p>
+				<p>I added a cloud and sun to add life to the image.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>I had to split this up into multiple sections.</p>
+				<p>The Trees surround the river, so I created a river and sprinkled trees on both sides of the river.</p>
+				<p>The river itself is a cascade of rounded edge rectangles, which move around left and right to show a winding river.</p>
+				<p>The mountain is a single line with bumps added to simulate ridges.</p>
+				<p>The sky is a pink box, with random blue opacity ellipses added to simulate a sunset.</p>
+				<p>The clouds move based on time, and loop through the sky.</p>
+				<p>The sun moves in the sky based on a sin wave, and moves X position based on the X position of the mouse.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>This project started out easy, thanks to the code provided. The mountain and trees use the same code as the provided example.</p>
+				<p>I added a river, and made it wind which actually didn't take too long. Afterwards, I had to make sure trees weren't inside the river. I changed this by tweaking the tree placement to not include the middle third of the canvas.</p>
+				<p>Next, I added the cloud which moves to the right based on time, and loops back to the left side once the right side of the canvas is reached.</p>
+				<p>The sun took a while, but overall I learned a lot about manipulating sin waves based on how I want objects to move in an arch.</p>
+				<p>Overall, I'm not too happy with the opacity of the blue and pink sky. I wish I knew a better way to implement the opacity, but the level of quality matches the rest of the basic shapes of the project</p>
 			</div>
 
 		</section>
