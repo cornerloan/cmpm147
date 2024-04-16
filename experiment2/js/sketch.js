@@ -56,8 +56,8 @@ function draw() {
   rect(0, 0, width, height / 2);
   
   //fill(skyColorBlue);
-  let rand1 = random(300);
-  let rand2 = random(150);
+  let rand1 = random(width/4);
+  let rand2 = random(height/4);
   for(let a = 0; a < 10; a++){
     ellipse(0, 0, rand1 / (10 - a), rand2 / (10 - a));
     fill(105, 173, 228, 150 - a);
