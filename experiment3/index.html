@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 3 - Alternate Worlds</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -15,56 +16,88 @@
 
 	<!-- Load jQuery library -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<!-- Load p5.js library -->
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<script type="text/javascript" src="../js/site.js" DEFER></script>
 	<!-- Use me for a JavaScript OOP Project -->
 	<script type="text/javascript" src="./js/project.js" DEFER></script>
 	<!-- Use me for a p5.js project -->
 	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
 </head>
+
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Alternate Worlds</h1>
 
 			<div class="minor-section">
-				<div id="canvas-container">
+				<span id="canvasContainer" style="margin: 10px;"></span>
+				<textarea cols="20" rows="20" id="asciiBox"
+					style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+				<div id="dungeon">
 					<!-- canvas will be added here -->
 				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
+				<br>
+				<div class="fullscreen-box">
+					<button id="reseedButton">
+						reseed
+					</button>
+					<span id="seedReport"></span>
+					<button id="fullscreen">Fullscreen</button>
+				</div>
+			</div>
+
+			<div class="minor-section">
+				<span id="canvasContainer2" style="margin: 10px;"></span>
+				<textarea cols="20" rows="20" id="asciiBox2"
+					style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+				<div id="overworld">
+					<!-- canvas will be added here -->
+				</div>
+				<br>
+				<div class="fullscreen-box">
+					<button id="reseedButton2">
+						reseed
+					</button>
+					<span id="seedReport2"></span>
+					<button id="fullscreen">Fullscreen</button>
+				</div>
 			</div>
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>This assignment was done to procedurally generate maps. <br>
+					One was a dungeon crawler type world, with two connected rooms. <br>
+					The other is an overworld showing a river and trees.
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>This program works by generating a two dimensional array of spaces, and procedurally assigning values that represent different qualities for the maps. For instance, in the overworld map a "T" is a tree, a "R" is water, and a "_" is grass. <br>
+					From there, a graphical map is created that uses autotiling to convert the array of symbols into artwork generated from an image.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>The biggest difficulty with this project was learning how autotiling works, and attempting to map out an algorithm for correctly identifying neighboring spaces.<br>
+					The walls of the dungeon look at surrounding tiles to determine which way to face a wall, or to use a corner wall. Once I got this technique down though the project wasn't bad.
+				</p>
 			</div>
 
 		</section>
 		<nav id="links" class="minor-section">
 			<!-- Put link back to homepage here. -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+			</ul>
 		</nav>
 	</main>
 </body>
+
 </html>
