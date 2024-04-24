@@ -464,6 +464,7 @@ var overworld = function(q) {
         }
       }
     }
+    q.drawCloud();
   }
 
   q.gridCheck = function(grid, i, j, target) {
@@ -520,7 +521,17 @@ var overworld = function(q) {
     */
 
     q.placeTile(i, j, ti, tj);
+  }
 
+
+  q.drawCloud = function() {
+    let numClouds = q.floor(q.random(2, 4));
+    q.noStroke();
+
+    for (let i = 1; i < numClouds; i++) {
+      q.fill(173, 143, 140, 120);
+      q.rect(q.width * ((q.millis() / (6000.0 - 1000 * i)) % 1), q.random(q.height), q.random(q.width / 5), q.random(q.height / 5));
+    }
   }
 
   //[x, y]
