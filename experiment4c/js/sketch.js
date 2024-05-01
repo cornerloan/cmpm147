@@ -61,7 +61,6 @@ function worldOffsetToCamera([world_x, world_y]) {
 }
 
 function preload() {
-
   if (window.p3_preload) {
     window.p3_preload();
   }
@@ -69,7 +68,7 @@ function preload() {
 
 function setup() {
   let canvas = createCanvas(800, 400);
-  canvas.parent("container1");
+  canvas.parent("container3");
 
   camera_offset = new p5.Vector(-width / 2, height / 2);
   camera_velocity = new p5.Vector(0, 0);
@@ -80,7 +79,7 @@ function setup() {
 
   let label = createP();
   label.html("World key: ");
-  label.parent("container1");
+  label.parent("container3");
 
   let input = createInput("xyzzy");
   input.parent(label);
@@ -88,7 +87,7 @@ function setup() {
     rebuildWorld(input.value());
   });
 
-  createP("Arrow keys scroll. Clicking changes tiles.").parent("container1");
+  createP("Arrow keys scroll. Clicking changes tiles.").parent("container3");
 
   rebuildWorld(input.value());
 }
@@ -236,6 +235,7 @@ function p3_preload() {}
 function p3_setup() {}
 
 var worldSeed;
+let clickedTiles = {};
 
 
 function p3_worldKeyChanged(key) {
@@ -257,8 +257,13 @@ let [tw, th] = [p3_tileWidth(), p3_tileHeight()];
 let clicks = {};
 
 function p3_tileClicked(i, j) {
+  // Toggle state of clicked tile
   let key = [i, j];
-  clicks[key] = 1 + (clicks[key] | 0);
+  if (clickedTiles[key]) {
+    delete clickedTiles[key]; // Remove the tile if it's already clicked
+  } else {
+    clickedTiles[key] = true; // Add the tile if it's not clicked
+  }
 }
 
 function p3_drawBefore() {}
@@ -266,43 +271,28 @@ function p3_drawBefore() {}
 function p3_drawTile(i, j) {
   noStroke();
   let isGreenTile = false;
-  if (XXH.h32("tile:" + [i, j], worldSeed) % 4 == 0 || XXH.h32("tile:" + [i, j], worldSeed) % 3 == 0 || XXH.h32("tile:" + [i, j], worldSeed) % 2 == 0) {
-    //ONE EXAMPLE OF TILE    
-    //fill(20, 200);
-    
-    //MY CODE
-    fill(65,200,65);
+  if (
+    XXH.h32("tile:" + [i, j], worldSeed) % 4 == 0 ||
+    XXH.h32("tile:" + [i, j], worldSeed) % 3 == 0 ||
+    XXH.h32("tile:" + [i, j], worldSeed) % 2 == 0
+  ) {
+    fill("Peru");
     isGreenTile = true;
-    //imgCutout = image(tilesetImage1, -tw, -th, tw, th, 1, 0, 15, 8);
-    
   } else {
-    //ANOTHER EXAMPLE OF TILE
     fill(93, 216, 218);
-    //image(tilesetImage1, i, j,);
-    //imgCutout = image(tilesetImage1, -tw, -th, tw, th, 1, 0, 15, 8);
   }
 
   push();
+  beginShape();
+  vertex(-tw, 0);
+  vertex(0, th);
+  vertex(tw, 0);
+  vertex(0, -th);
+  endShape(CLOSE);
 
-  
-  let shape = beginShape();
-  shape.vertex(-tw, 0);
-  shape.vertex(0, th);
-  shape.vertex(tw, 0);
-  shape.vertex(0, -th);
-  shape.endShape(CLOSE);
-
-  
-  // Check if a tree should be drawn on this tile
-  let drawTree = clicks[[i, j]] % 2 == 1;
-  if (drawTree && isGreenTile) {
-    let branchColor = color(139, 69, 19); // Brown color
-
-
-    // Draw branches
-    
-    drawBranch(0, th/4, PI / 2, 20, 8, branchColor, "DarkGreen"); // Branches start from the top of the trunk
-
+  // Check if a mountain should be drawn on this tile
+  if (clickedTiles[[i, j]] && isGreenTile) {
+    drawMountain(0, 0); // Draw mountain at the center of the tile
   }
 
   pop();
@@ -327,30 +317,10 @@ function p3_drawSelectedTile(i, j) {
 
 function p3_drawAfter() {}
 
-function drawBranch(x, y, angle, length, thickness, branchColor, leafColor) {
-  // Draw the main branch
-  stroke(branchColor);
-  strokeWeight(thickness);
-  line(x, y, x + cos(angle) * length, y - sin(angle) * length);
-
-  // Draw leaves above the branch
-  drawLeaves(x + cos(angle) * length, y - sin(angle) * length, angle, length, leafColor);
+function drawMountain(x, y) {
+  // Adjust the size and appearance of the mountain as needed
+  fill(160); // Gray color
+  triangle(x, y - 30, x - 30, y + 30, x + 30, y + 30); // Draw a triangle as the mountain
 }
 
-function drawLeaves(x, y, angle, length, color) {
-  let numLeaves = 5; // Number of leaves
-  let leafSize = 20; // Size of each leaf
-  let leafInterval = length / (numLeaves + 1); // Interval between leaves
-
-  // Calculate positions of leaves above the branches
-  for (let i = 1; i <= numLeaves; i++) {
-    let leafX = x + cos(angle) * (i * leafInterval); // Position the leaf along the branch
-    let leafY = y - sin(angle) * (i * leafInterval); // Position the leaf along the branch
-
-    // Draw the leaf
-    fill(color);
-    noStroke();
-    ellipse(leafX, leafY, leafSize, leafSize);
-  }
-}
 
