@@ -67,8 +67,9 @@ function initDesign(inspiration) {
     design.fg.push({
       x: random(width),
       y: random(height),
-      w: random(width / 6),
-      h: random(height / 6), fill: random(255)
+      w: random(width / 3),
+      h: random(height / 3),
+      fill: random(255)
     })
   }
   return design;
